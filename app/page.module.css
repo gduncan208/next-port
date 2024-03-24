@@ -16,7 +16,7 @@ display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-  position: absolute;
+  position: relative;
   gap: 2rem;
   margin: 0;
   padding: 2rem;
@@ -75,3 +75,47 @@ display: flex;
   text-decoration: none;
   font-size: 1.2em; /* Adjust font size as needed */
 }
+
+.aboutSection {
+  color: white;
+}
+
+.aboutGrid {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}  
+
+.aboutMe {
+  display: flex;
+    flex-direction: column;
+  padding: 2rem;
+  width: 500px;
+}
+
+.infoTabs {
+  width: 100%;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.proCard {
+  height: 500px;
+  width: 500px;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  border: 1px solid white;
+}
+
+.proInfo {
+  height: 2rem;
+  background-color: rgb(27, 27, 27);
+  justify-self: flex-end ;
+}
+
