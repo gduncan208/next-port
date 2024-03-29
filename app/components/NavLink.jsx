@@ -1,13 +1,33 @@
+import { useEffect } from "react";
+import { gsap } from "gsap/all";
+import { ScrollToPlugin } from "gsap/all";
 
-const { default: Link } = require("next/link")
+const NavLink = ({ title, id }) => {
 
-const NavLink = ({ href, title }) => {
+    gsap.registerPlugin(ScrollToPlugin);
+
+   const jumpTo = () => {
+        gsap.to(window, {
+            duration: .4,
+            scrollTo: {y: `#${id}`, autoKill: true, onAutoKill: autoKill },
+            behavior: "smooth",
+        });
+      };
+
+      const autoKill = () => {
+        alert("autoKill");
+      };
+
+      useEffect(() => {
+        return () => {    
+            gsap.killTweensOf(window);
+        };
+      }, []);
+      
     return (
-        <Link
-            href={href}
-            >
-                {title}
-        </Link>
+        <a onClick={jumpTo}>
+            {title}
+        </a>
     );
 };
 

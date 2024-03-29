@@ -1,4 +1,4 @@
-import Link from 'next/link'
+
 import React, { useState, useEffect } from "react";
 import { Sling as Hamburger } from 'hamburger-react'
 import { useMediaQuery } from 'react-responsive';
@@ -9,13 +9,15 @@ import styles from "../page.module.css";
 const navLinks = [
     {
         title: "About",
-        path: "#about",
+        id: "about",
     },
     {
         title: "Projects",
-        path: "#projects",
+        id: "projects",
     }
 ]
+
+
 
 const NavBar = () => {
     const [navbarOpen, setNavbarOpen]= useState(false);
@@ -33,7 +35,7 @@ const NavBar = () => {
         <nav className={`${styles.nav}
          ${isMobile ? styles.mobileNav : {height: '100%'}}`}>
 
-            <Link href={'/'} className={styles.logo}>LOGO</Link>
+            <a href={'/'} className={styles.logo}>LOGO</a>
             <div>
             {isMobile && (
                 <div style=
@@ -55,7 +57,7 @@ const NavBar = () => {
                     <ul>
                        {navLinks.map((link, index) => (
                             <li key={index}>
-                                <NavLink href={link.path} title={link.title} />
+                                <NavLink title={link.title} id={link.id}/>
                             </li>
                        ))} 
                     </ul>

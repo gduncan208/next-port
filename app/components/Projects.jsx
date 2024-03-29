@@ -1,34 +1,22 @@
 import React from "react";
+import styles from "../page.module.css"
 import ProjectCard from "./ProjectCard";
+// import hotshellBCard from "../images/hotshellbcmockup.png"
 
 const projectsData = [
     {
         id: 1,
         title: "Project 1",
         description:"Description for project 1",
-        image: "public/images/projects/cardmockup.png",
+        // image: hotshellBCard,
         tag: ["All", "Graphic Design"]
     },
-    // {
-    //     id: 2,
-    //     title: "Project 2",
-    //     description:"Description for project 2",
-    //     image: "",
-    //     tag: ["All", "Graphic Design"]
-    // },
-    // {
-    //     id: 2,
-    //     title: "Project 2",
-    //     description:"Description for project 2",
-    //     image: "",
-    //     tag: ["All", "Graphic Design"]
-    // },
+  
 ]
-
 
 const Projects = () => {
     return (
-        <>
+        <section className={styles.projectsSection} id="projects">
             <div>
                 {projectsData.map((project) => 
                 <ProjectCard 
@@ -38,7 +26,7 @@ const Projects = () => {
                     imgUrl={project.image} /> 
                     )} 
             </div>
-        </>
+        </section>
     );
 };
 

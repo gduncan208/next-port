@@ -1,4 +1,5 @@
 
+
 .main {
 display: flex;
   flex-direction: column;
@@ -8,15 +9,22 @@ display: flex;
   font-size: 24px;
 }
 .nav {
+
+  font-family: "kanit", sans-serif;
+  font-size: large;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-style: normal;
   width: 100%;
   height: fit-content;
   color: white;
   background: transparent;
+  backdrop-filter: blur(5px);
   display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-  position: relative;
+  position: fixed;
   gap: 2rem;
   margin: 0;
   padding: 2rem;
@@ -39,6 +47,7 @@ display: flex;
 
 .nav li:hover {
   opacity: 1;
+  letter-spacing: 2px;
   transition: ease-in 0.3s;
 }
 
@@ -76,8 +85,10 @@ display: flex;
   font-size: 1.2em; /* Adjust font size as needed */
 }
 
-.aboutSection {
+.aboutSection, .projectsSection {
   color: white;
+  margin: 0 auto 4rem;
+  min-width: 350px;
 }
 
 .aboutGrid {
@@ -92,6 +103,7 @@ display: flex;
   display: flex;
     flex-direction: column;
   padding: 2rem;
+  margin: 0 auto;
   width: 500px;
 }
 
@@ -101,21 +113,71 @@ display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  margin: 2rem;
+}
+
+.infoTabs button {
+  font-family: "kanit", sans-serif;
+  font-size: large;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-style: normal;
+}
+
+.tabData {
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.skillBlocks {
+  display: flex;
+    flex-direction: row;
+}
+
+.skillBlocks  li{
+ 
+}
+
+.skillBlocks ul {
+  list-style: none;
 }
 
 .proCard {
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 800px;
   display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
   border: 1px solid white;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .proInfo {
-  height: 2rem;
+  height: inherit;
+  width: 50%;
   background-color: rgb(27, 27, 27);
   justify-self: flex-end ;
+  margin: 0;
+  padding: 0;
 }
 
+@media (max-width: 475px){
+  .aboutMe {
+    padding: 2rem;
+    margin: 0 auto;
+    width: 350px;
+  }
+
+  .infoTabs {
+    width: 100%;
+    margin: 0;
+  }
+
+  .skillBlocks {
+  }
+}

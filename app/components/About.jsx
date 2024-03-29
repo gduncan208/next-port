@@ -3,21 +3,30 @@ import React, { useTransition, useState } from "react";
 import styles from "../page.module.css"
 import { useMediaQuery } from "react-responsive";
 import TabButton from "./TabButton";
+import { useRef } from "react"; 
 
 const TAB_DATA = {
    skills: {
         id: "skills",
         content: (
             <>
-                <div>Coding Skills</div>
-                <div>Design Skills</div>
+                <div className={styles.skillBlocks}>
+                    <ul>
+                        <li>Adobe Illustrator</li>
+                        <li>Adobe Photoshop</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript <i style={{color: "grey"}}>learning in progress</i></li>
+                        <li>React <i style={{color: "grey"}}>learning in progress</i></li>
+                    </ul>
+                </div>
             </>
     )},
     experience: {
         id: "experience",
         content: (
             <>
-            
+                <div></div>
             </>
     )},
 }
@@ -32,9 +41,9 @@ const About = () => {
         });
     }
     return (
-        <section className={styles.aboutSection}>
+        <section className={styles.aboutSection} id="about">
             <div className={styles.aboutGrid}>
-                <div style={{height: 500, width: 500, backgroundColor: "grey"}}>Image Placeholder</div>
+                <div style={{height: 500, width: 300, backgroundColor: "grey"}}>Image Placeholder</div>
                 <div className={styles.aboutMe}>
                     <h2 style={{paddingBottom: "1rem", fontSize: 21}}>
                         Hey there I'm Gracie
@@ -44,12 +53,12 @@ const About = () => {
                     </p>
                 </div>
                 <div className={styles.infoTabs}>
-                    <div>
+                    <div className={styles.tabButton}>
                         <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"}>Skills</TabButton>
 
                         <TabButton selectTab={() => handleTabChange("experience")} active={tab === "experience"}>Experience</TabButton>
                     </div>
-                    <div>{TAB_DATA[tab].content}</div>
+                    <div className={styles.tabData}>{TAB_DATA[tab].content}</div>
                 </div>
             </div>
         </section>

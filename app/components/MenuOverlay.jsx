@@ -13,7 +13,7 @@ const MenuOverlay = ( { links, index } ) => {
         }}>
         {links.map((link, index) => (
             <li key={index}>
-                <NavLink href={link.path} title={link.title} />
+                <NavLink href={link.id} title={link.title} />
             </li>
             ))}
         </ul>
@@ -21,4 +21,4 @@ const MenuOverlay = ( { links, index } ) => {
     )   
 }
 
-export default MenuOverlay
+export default MenuOverlay;
