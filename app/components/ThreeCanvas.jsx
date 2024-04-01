@@ -68,7 +68,7 @@ const ThreeCanvas = () => {
     }, []);
 
     return (
-      <canvas ref={canvasRef} />  
+      <canvas />  
     );
 };
   

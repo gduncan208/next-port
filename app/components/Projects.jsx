@@ -1,18 +1,18 @@
 import React from "react";
 import styles from "../page.module.css"
 import ProjectCard from "./ProjectCard";
-// import hotshellBCard from "../images/hotshellbcmockup.png"
+import hotshellBCard from "../images/hotshellBC.png";
 
 const projectsData = [
     {
         id: 1,
         title: "Project 1",
         description:"Description for project 1",
-        // image: hotshellBCard,
+        image: hotshellBCard,
         tag: ["All", "Graphic Design"]
     },
   
-]
+];
 
 const Projects = () => {
     return (

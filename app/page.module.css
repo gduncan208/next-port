@@ -146,25 +146,32 @@ display: flex;
 }
 
 .proCard {
-  height: 400px;
-  width: 800px;
   display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
   border: 1px solid white;
   border-radius: 10px;
-  overflow: hidden;
+  overflow: clip;
+}
+
+.proimage {
+  height: 400px;
+  width: 400px;
 }
 
 .proInfo {
-  height: inherit;
-  width: 50%;
-  background-color: rgb(27, 27, 27);
-  justify-self: flex-end ;
+  height: auto;
+  width: 400px;
+  display: inline;
+  text-align: center;
+  align-content: center;
+  background: transparent;
+  backdrop-filter: blur(5px);
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
+
 
 @media (max-width: 475px){
   .aboutMe {
@@ -180,4 +187,13 @@ display: flex;
 
   .skillBlocks {
   }
+
+  .proCard{
+    flex-direction: column;
+  }
+
+  .proInfo {
+    height: 100px;
+  }
+  
 }
