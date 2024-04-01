@@ -8,14 +8,10 @@ const NavLink = ({ title, id }) => {
 
    const jumpTo = () => {
         gsap.to(window, {
-            duration: .4,
-            scrollTo: {y: `#${id}`, autoKill: true, onAutoKill: autoKill },
+            duration: .3,
+            scrollTo: {y: `#${id}`},
             behavior: "smooth",
         });
-      };
-
-      const autoKill = () => {
-        alert("autoKill");
       };
 
       useEffect(() => {

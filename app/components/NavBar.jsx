@@ -47,7 +47,7 @@ const NavBar = () => {
                     onToggle={setNavbarOpen}
                      />
                 </div>
-                        )}               
+                        )}           
                 {navbarOpen &&(
                     <MenuOverlay links={navLinks} /> 
                 )}
@@ -59,13 +59,13 @@ const NavBar = () => {
                             <li key={index}>
                                 <NavLink title={link.title} id={link.id}/>
                             </li>
-                       ))} 
+                       ))}
                     </ul>
                 </div>
-                )}    
+                )}   
             </div>
         </nav>
-    )
-}
+    );
+};
 
 export default NavBar;

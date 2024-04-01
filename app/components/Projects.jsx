@@ -24,10 +24,10 @@ const Projects = () => {
                     title={project.title} 
                     description={project.description} 
                     imgUrl={project.image} /> 
-                    )} 
+                    )}
             </div>
         </section>
-    );
+    )
 };
 
 export default Projects;
