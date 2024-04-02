@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <NavBar />
-      <ThreeCanvas />
+      {/* <ThreeCanvas /> */}
       <About />
       <Projects />
     </main>

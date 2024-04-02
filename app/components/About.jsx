@@ -23,10 +23,18 @@ const TAB_DATA = {
             </>
     )},
     experience: {
-        id: "experience",
+        id: "Education",
         content: (
             <>
-                <div></div>
+                <div className={styles.educationBlocks}>
+                    <dl>
+                        <dt>North Idaho College</dt>
+                        <dd>
+                            <p>A.A.S Graphic and Web Design</p>
+                            <p>2023 - Current</p>
+                        </dd>
+                    </dl>
+                </div>
             </>
     )},
 }
@@ -43,7 +51,7 @@ const About = () => {
     return (
         <section className={styles.aboutSection} id="about">
             <div className={styles.aboutGrid}>
-                <div style={{height: 500, width: 300, backgroundColor: "grey"}}>Image Placeholder</div>
+                <div className={styles.imgHolder}>Image Placeholder</div>
                 <div className={styles.aboutMe}>
                     <h2 style={{paddingBottom: "1rem", fontSize: 21}}>
                         Hey there I'm Gracie

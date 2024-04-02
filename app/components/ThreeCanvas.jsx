@@ -68,7 +68,7 @@ const ThreeCanvas = () => {
     }, []);
 
     return (
-      <canvas />  
+      <canvas className={styles.threeCanvas}/>  
     );
 };
   
