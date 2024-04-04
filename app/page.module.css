@@ -146,7 +146,7 @@ display: flex;
   margin: 2rem;
 }
 
-.skillBlocks  ul{
+.skillBlocks  ul {
   margin: 0 auto;
   display: grid;
     gap: 1rem;
@@ -202,6 +202,34 @@ display: flex;
   margin: 0 auto;
   width: 50%;
 }
+
+.projectModal {
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: fit-content;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    box-shadow: 100% 100% #0000003f;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(15px);
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
 
 
 @media (max-width: 500px){

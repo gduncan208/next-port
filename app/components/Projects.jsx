@@ -9,7 +9,7 @@ const projectsData = [
         title: "Project 1",
         description:"Description for project 1",
         image: hotshellBCard,
-        tag: ["All", "Graphic Design"]
+        tag: ["All", "Graphic Design"],
     },
   
 ];
