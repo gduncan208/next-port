@@ -6,6 +6,7 @@ import styles from "../page.module.css";
 function FadeIn(props) {
     const [isVisible, setVisible] = React.useState(false);
     const domRef = React.useRef();
+
     React.useEffect(() => {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => setVisible(entry.isIntersecting));
@@ -16,7 +17,8 @@ function FadeIn(props) {
                 observer .unobserve(domRef.current)
             }
         };
-    }, []);
+    }, [domRef.current]);
+
     return (
         <div
             className={`${styles["fade-in-section"]} ${isVisible ? styles["is-visible"] : ''}`} // Use CSS module class names
