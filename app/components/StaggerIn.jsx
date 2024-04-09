@@ -18,7 +18,7 @@ function StaggerIn(props) {
                 observer.unobserve(domRef.current)
             }
         };
-    }, []);
+    }, [domRef.current]);
 
     useEffect(() => {
         if (isVisible) {

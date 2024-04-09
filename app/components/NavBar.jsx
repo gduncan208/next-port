@@ -27,8 +27,7 @@ const NavBar = () => {
         if (!isMobile && navbarOpen) {
             setNavbarOpen(false);
         }
-    }
-    )
+    }, [isMobile, setNavbarOpen])
 
     return (
         

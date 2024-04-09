@@ -52,7 +52,7 @@ const About = () => {
                 <div className={styles.imgHolder}>Image Placeholder</div>
                 <div className={styles.aboutMe}>
                     <h2 style={{paddingBottom: "1rem", fontSize: 21}}>
-                        Hey there I'm Gracie
+                        Hey there I&lsquo;m Gracie
                     </h2>
                     <p>
                         Anim dolor proident ut ea velit aute. Do est fugiat esse culpa commodo reprehenderit quis adipisicing minim pariatur duis officia excepteur. Laborum ipsum nostrud ullamco Lorem dolore consequat pariatur commodo sunt non Lorem quis irure. In irure eiusmod anim sunt eu officia veniam incididunt quis ut magna enim et. Amet proident aute exercitation do nostrud non. Exercitation eu laboris id excepteur ut adipisicing.
