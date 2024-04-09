@@ -4,6 +4,7 @@ import styles from "../page.module.css"
 import TabButton from "./TabButton";
 import FadeIn from "./FadeIn";
 import StaggerIn from "./StaggerIn";
+import { Grid } from "@mui/material";
 
 const TAB_DATA = {
    skills: {
@@ -49,15 +50,21 @@ const About = () => {
         <section className={styles.aboutSection} id="about">
             <div className={styles.aboutGrid}>
                 <FadeIn>
-                <div className={styles.imgHolder}>Image Placeholder</div>
-                <div className={styles.aboutMe}>
-                    <h2 style={{paddingBottom: "1rem", fontSize: 21}}>
-                        Hey there I'm Gracie
-                    </h2>
-                    <p>
-                        Anim dolor proident ut ea velit aute. Do est fugiat esse culpa commodo reprehenderit quis adipisicing minim pariatur duis officia excepteur. Laborum ipsum nostrud ullamco Lorem dolore consequat pariatur commodo sunt non Lorem quis irure. In irure eiusmod anim sunt eu officia veniam incididunt quis ut magna enim et. Amet proident aute exercitation do nostrud non. Exercitation eu laboris id excepteur ut adipisicing.
-                    </p>
-                </div>
+                    <Grid container justifyContent={"center"} alignItems={"center"}>
+                        <Grid item md={6}>
+                            <div className={styles.imgHolder}>Image Placeholder</div>
+                        </Grid>
+                        <Grid item md={6}>
+                            <div className={styles.aboutMe}>
+                                <h2 style={{ paddingBottom: "1rem", fontSize: 21 }}>
+                                    Hey there I'm Gracie
+                                </h2>
+                                <p>
+                                    Anim dolor proident ut ea velit aute. Do est fugiat esse culpa commodo reprehenderit quis adipisicing minim pariatur duis officia excepteur. Laborum ipsum nostrud ullamco Lorem dolore consequat pariatur commodo sunt non Lorem quis irure. In irure eiusmod anim sunt eu officia veniam incididunt quis ut magna enim et. Amet proident aute exercitation do nostrud non. Exercitation eu laboris id excepteur ut adipisicing.
+                                </p>
+                            </div>
+                        </Grid>
+                    </Grid>
                 </FadeIn>
                 <div className={styles.infoTabs}>
                     <div className={styles.tabButton}>

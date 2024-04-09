@@ -7,7 +7,7 @@ const projectsData = [
     {
         id: 1,
         title: "Project 1",
-        description:"Description for project 1",
+        description:"This is the description for Project 1",
         image: hotshellBCard,
         tag: ["All", "Graphic Design"],
     },

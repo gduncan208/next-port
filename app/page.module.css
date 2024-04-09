@@ -19,7 +19,6 @@ display: flex;
   height: fit-content;
   color: white;
   background: transparent;
-  backdrop-filter: blur(5px);
   display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -28,6 +27,7 @@ display: flex;
   gap: 2rem;
   margin: 0;
   padding: 2rem;
+  z-index: 10;
 }
 
 .nav ul {
@@ -101,7 +101,18 @@ display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+  width: 100vw;
+  margin: 0;
 }  
+
+.folder {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 
 .aboutMe {
   display: flex;
@@ -124,6 +135,7 @@ display: flex;
     justify-content: center;
     align-items: center;
   margin: 2rem;
+  align-self: stretch;
 }
 
 .infoTabs button {
@@ -194,13 +206,13 @@ display: flex;
   border: 1px solid white;
 }
 
-.proInfo {
+.modalWrapper {
+  margin: 4rem;
   display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  padding: 2rem;
-  margin: 0 auto;
-  width: 50%;
+  flex-direction: column;
+  border: white solid 1px;
+  height: inherit;
+  width: inherit;
 }
 
 .projectModal {
@@ -208,12 +220,13 @@ display: flex;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 800px;
-    height: fit-content;
-    background-color: white;
+    width: 90vw;
+    height: 85vh;
+    background-color: black;
     padding: 20px;
     border: 1px solid black;
     box-shadow: 100% 100% #0000003f;
+    z-index: 200;
 }
 
 .fade-in-section {

@@ -33,8 +33,7 @@ const TabButton = ({ active, selectTab, children }) => {
         bottom: "0",
         transition: ".2s ease-in-out",
         backgroundColor: "white",
-        position: "relative", 
-        zIndex: "1", 
+        position: "relative",  
     };
 
   

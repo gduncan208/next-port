@@ -22,10 +22,12 @@ const ProjectCard = ({ imgUrl, title, description }) => {
                     />
                 );
             }}>
-                <div className={styles.proInfo}>
-                    <h5>{title}</h5>
-                    <p>{description}</p>
-                </div>
+                    <div className={styles.proInfo}>
+                        <div className={styles.modalWrapper}>
+                            <h5>{title}</h5>
+                            <p>{description}</p>
+                        </div>
+                    </div>
             </Modal>
         </div>
         </FadeIn>
