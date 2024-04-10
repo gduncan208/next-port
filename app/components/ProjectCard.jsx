@@ -3,8 +3,6 @@ import styles from "../page.module.css";
 import Image from "next/image";
 import Modal from "./Modal";
 import FadeIn from "./FadeIn";
-import { render } from "react";
-
 
 const ProjectCard = ({ imgUrl, title, description }) => {
     return (
