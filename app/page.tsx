@@ -6,6 +6,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import { gsap } from "gsap";
 import FadeIn from "./components/FadeIn";
+import Contact from "./components/Contact";
 
 export default function Home() {
 
@@ -14,6 +15,7 @@ export default function Home() {
       <NavBar />
       <About />
       <Projects />
+      <Contact />
     </main>
   );
 };

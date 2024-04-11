@@ -243,6 +243,17 @@ display: flex;
   visibility: visible;
 }
 
+.form {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contactSection {
+  background-color: white;
+}
+
 
 
 @media (max-width: 500px){
