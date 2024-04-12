@@ -1,23 +1,41 @@
 import React from "react";
+import { useState } from "react";
 import styles from "../page.module.css";
 import Image from "next/image";
 import Modal from "./Modal";
 import FadeIn from "./FadeIn";
+import StaggerIn from "./StaggerIn";
 
-const ProjectCard = ({ imgUrl, title, description }) => {
+const ProjectCard = ({ imgUrl, title, description, hover }) => {
+
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
     return (
-        <FadeIn>
-        <div className={styles.proCard}>
+        <StaggerIn>
+        <div className={styles.proCard}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}>
             <Modal render={(open) => {
                 return (
-                    <Image
-                        onClick={open}
-                        src={imgUrl}
-                        alt={title}
-                        height={400}
-                        width={400}
-                        onError={(e) => console.error("Failed to load image:", e)}
-                    />
+                    <div className={styles.imgContainer}>
+                        <Image
+                            onClick={open}
+                            src={isHovered ? hover : imgUrl}
+                            alt={title}
+                            layout="fill"
+                            objectFit="contain"
+                            cursor="pointer"
+                            onError={(e) => console.error("Failed to load image:", e)}
+                        />
+                    </div>
                 );
             }}>
                     <div className={styles.proInfo}>
@@ -28,7 +46,7 @@ const ProjectCard = ({ imgUrl, title, description }) => {
                     </div>
             </Modal>
         </div>
-        </FadeIn>
+        </StaggerIn>
     );
 };
 

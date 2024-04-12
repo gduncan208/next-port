@@ -197,14 +197,31 @@ display: flex;
   margin: .5rem;
 }
 
+.projects {
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
 .proCard {
+  cursor: pointer;
   display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-  border: 1px solid white;
+  transition: .5s ease;
 }
+
+
+.imgContainer {
+  width: 400px;
+  height: 400px;
+}
+
 
 .modalWrapper {
   margin: 4rem;
@@ -298,8 +315,10 @@ display: flex;
       text-align: center;
      }
 
-  .proCard{
-  }
+     .imgContainer {
+      width: 300px;
+      height: 300px;
+    }
 
   .proInfo {
     margin: 0;

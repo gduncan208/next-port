@@ -4,7 +4,7 @@ import styles from "../page.module.css"
 import TabButton from "./TabButton";
 import FadeIn from "./FadeIn";
 import StaggerIn from "./StaggerIn";
-import { Grid } from "@mui/material";
+import { Grid } from '@mui/material';
 
 const TAB_DATA = {
    skills: {
