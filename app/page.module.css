@@ -139,11 +139,8 @@ display: flex;
 }
 
 .infoTabs button {
-  font-family: "kanit", sans-serif;
-  font-size: large;
-  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
-  font-style: normal;
 }
 
 .tabData {
@@ -206,8 +203,10 @@ display: flex;
     gap: 1rem;
 }
 
+
 .proCard {
   cursor: pointer;
+  list-style: none;
   display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -227,9 +226,32 @@ display: flex;
   margin: 4rem;
   display: flex;
   flex-direction: column;
-  border: white solid 1px;
   height: inherit;
   width: inherit;
+}
+
+.protags {
+  width: 50%;
+  margin: 1rem;
+  gap: .75rem;
+  display: flex;
+    flex-direction: row;
+}
+
+.protags > * {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: small;
+  list-style: none;
+  padding: .25rem .5rem;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+}
+
+.protools {
+  list-style: none;
 }
 
 .projectModal {
@@ -239,11 +261,26 @@ display: flex;
     transform: translate(-50%, -50%);
     width: 90vw;
     height: 85vh;
+    border-radius: 10px;
     background-color: black;
     padding: 20px;
     border: 1px solid black;
     box-shadow: 100% 100% #0000003f;
-    z-index: 200;
+    z-index: 10;
+}
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255, 0.2);
+  filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
 }
 
 .fade-in-section {

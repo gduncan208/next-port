@@ -6,47 +6,46 @@ import Modal from "./Modal";
 import FadeIn from "./FadeIn";
 import StaggerIn from "./StaggerIn";
 
-const ProjectCard = ({ imgUrl, title, description, hover }) => {
+const ProjectCard = ({ imgUrl, title, description, tags, tools, gallery }) => {
 
-    const [isHovered, setIsHovered] = useState(false);
+   const projectTags = tags.map((tag, index) => <li key={index}>{tag}</li>);
+   const projectTools = tools.map((tool, index) => <li key={index}>{tool}</li>);
 
-    const handleMouseEnter = () => {
-        setIsHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsHovered(false);
-    };
 
     return (
-        <StaggerIn>
-        <div className={styles.proCard}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
+        <div className={styles.proCard}>
             <Modal render={(open) => {
                 return (
-                    <div className={styles.imgContainer}>
+                    <li className={styles.imgContainer}>
                         <Image
                             onClick={open}
-                            src={isHovered ? hover : imgUrl}
+                            src={imgUrl}
                             alt={title}
-                            layout="fill"
-                            objectFit="contain"
+                            layout="responsive"
+                            height={400}
+                            width={400}
                             cursor="pointer"
                             onError={(e) => console.error("Failed to load image:", e)}
                         />
-                    </div>
+                    </li>
                 );
             }}>
                     <div className={styles.proInfo}>
                         <div className={styles.modalWrapper}>
-                            <h5>{title}</h5>
+
+                            <h3>{title}</h3>
+                            <ul className={styles.protags}>{projectTags}</ul>
+
+                            <h4 style={{fontWeight: 600}}>Made With</h4>
+                            <ul className={styles.protools}>{projectTools}</ul>
+
                             <p>{description}</p>
+
+                            <div>{gallery}</div>
                         </div>
                     </div>
             </Modal>
         </div>
-        </StaggerIn>
     );
 };
 
