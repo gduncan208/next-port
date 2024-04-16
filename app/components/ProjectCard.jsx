@@ -5,6 +5,8 @@ import Image from "next/image";
 import Modal from "./Modal";
 import FadeIn from "./FadeIn";
 import StaggerIn from "./StaggerIn";
+// import Carousel from "../components/Carousel";
+import { CCarousel, CCarouselItem, CImage } from '@coreui/react'
 
 const ProjectCard = ({ imgUrl, title, description, tags, tools, gallery }) => {
 
@@ -40,8 +42,14 @@ const ProjectCard = ({ imgUrl, title, description, tags, tools, gallery }) => {
                             <ul className={styles.protools}>{projectTools}</ul>
 
                             <p>{description}</p>
-
-                            <div>{gallery}</div>
+                                <div className={styles.imgGallery}>
+                                    {gallery && gallery.length ? gallery.map((image, index) => {
+                                        console.log(image);
+                                        return (
+                                                <img src={image.src} className={styles.galleryImage}/>
+                                        )
+                                    }) : null}
+                            </div>
                         </div>
                     </div>
             </Modal>

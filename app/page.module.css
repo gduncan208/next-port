@@ -260,17 +260,19 @@ display: flex;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90vw;
-    height: 85vh;
+    max-height: calc(100vh - 100px);
+    height: fit-content;
     border-radius: 10px;
     background-color: black;
     padding: 20px;
     border: 1px solid black;
     box-shadow: 100% 100% #0000003f;
     z-index: 10;
+    overflow-y: auto;
 }
 
 .modalBackdrop {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -282,6 +284,21 @@ display: flex;
   align-items: center;
   z-index: 9;
 }
+
+.imgGallery {
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ flex-wrap: wrap;
+ width: 100%;
+}
+
+.imgGallery > * {
+  margin: 1rem;
+  border-radius: 10px;
+}
+
 
 .fade-in-section {
   opacity: 0;
