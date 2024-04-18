@@ -8,7 +8,7 @@ const transporter = nodemailer.createTransport({
     port: process.env.NODEMAILER_PORT || 465,
     secure: process.env.NODEMAILER_SECURE || true, 
     auth: {
-        user: process.env.NODEMAILER_USERNAME || "gduncan.workem@gmail.com",
+        user: process.env.NODEMAILER_USERNAME || "gracielduncan@gmail.com",
         pass: process.env.NODEMAILER_PASSWORD || "password goes here"
     },
 });
@@ -17,7 +17,7 @@ const transporter = nodemailer.createTransport({
 export async function POST(request) {
     const body = await request.json();
     const info = await transporter.sendMail({
-        from: '"gduncan.workem@gmail.com', // sender address
+        from: '"gracielduncan@gmail.com', // sender address
         to: "bar@example.com, baz@example.com", // list of receivers
         subject: `Vercel Contact ${body.name}`, // Subject line
         text: body.message, // plain text body

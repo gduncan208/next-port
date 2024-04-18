@@ -23,12 +23,12 @@ const ContactForm = () => {
     }
 
     return (
-       <div>
+       <div className={styles.formContainer}>
             <form className={styles.form} action={handleSubmit}>
-                <TextField name="name" id="outlined-basic" label="Name" variant="outlined" />
-                <TextField name="email" id="outlined-basic" label="Email" variant="outlined" />
-                <TextareaAutosize id="message" label="Message" minRows={3} />
-                <Button variant="outlined" type="submit" />
+                <TextField className={styles.textField} name="name" id="outlined-basic" label="Name" variant="filled" />
+                <TextField className={styles.textField} name="email" id="outlined-basic" label="Email" variant="filled" />
+                <TextareaAutosize className={styles.textField} id="message" label="Message" minRows={3} />
+                <Button className={styles.submitButton} variant="outlined" type="submit">Submit</Button>
             </form>
         </div>
     )

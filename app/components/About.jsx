@@ -13,9 +13,10 @@ const TAB_DATA = {
             <>
                 <div className={styles.skillBlocks}>
                         <StaggerIn>
-                        {["Adobe Illustrator", "Adobe Photoshop", "HTML", "CSS", "JavaScript", "React"].map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
+                            <li>Illustrator</li>
+                            <li>Photoshop</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
                         </StaggerIn>
                 </div>
             </>

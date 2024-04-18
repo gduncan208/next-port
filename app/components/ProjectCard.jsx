@@ -7,19 +7,30 @@ import FadeIn from "./FadeIn";
 import StaggerIn from "./StaggerIn";
 // import Carousel from "../components/Carousel";
 import { CCarousel, CCarouselItem, CImage } from '@coreui/react'
+import { Content } from "next/font/google";
 
 const ProjectCard = ({ imgUrl, title, description, tags, tools, gallery }) => {
 
    const projectTags = tags.map((tag, index) => <li key={index}>{tag}</li>);
    const projectTools = tools.map((tool, index) => <li key={index}>{tool}</li>);
 
+   const [IsHovered, setIsHovered] = useState(false);
+    
 
     return (
         <div className={styles.proCard}>
             <Modal render={(open) => {
                 return (
                     <li className={styles.imgContainer}>
+                        <div
+                            className={styles.overlay}
+                            style={{ opacity: IsHovered ? 0.7 : 0, pointerEvents: IsHovered ? 'auto' : 'none' }}
+                            onClick={open}
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                        />
                         <Image
+                            className={styles.cardImg}
                             onClick={open}
                             src={imgUrl}
                             alt={title}
@@ -28,6 +39,8 @@ const ProjectCard = ({ imgUrl, title, description, tags, tools, gallery }) => {
                             width={400}
                             cursor="pointer"
                             onError={(e) => console.error("Failed to load image:", e)}
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
                         />
                     </li>
                 );
@@ -46,7 +59,14 @@ const ProjectCard = ({ imgUrl, title, description, tags, tools, gallery }) => {
                                     {gallery && gallery.length ? gallery.map((image, index) => {
                                         console.log(image);
                                         return (
-                                                <Image src={image.src} className={styles.galleryImage}/>
+                                            // <div style={{width: 400, height: 400}}>
+                                            <img 
+                                            src={image.src} 
+                                            height={0}
+                                            width={0} 
+    
+                                            className={styles.galleryImage}/>
+                                            // </div>
                                         )
                                     }) : null}
                             </div>
