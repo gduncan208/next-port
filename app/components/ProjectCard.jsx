@@ -46,7 +46,7 @@ const ProjectCard = ({ imgUrl, title, description, tags, tools, gallery }) => {
                                     {gallery && gallery.length ? gallery.map((image, index) => {
                                         console.log(image);
                                         return (
-                                                <img src={image.src} className={styles.galleryImage}/>
+                                                <Image src={image.src} className={styles.galleryImage}/>
                                         )
                                     }) : null}
                             </div>
