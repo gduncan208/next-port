@@ -11,11 +11,11 @@ import Contact from "./components/Contact";
 export default function Home() {
 
   return (
-    <main className={styles.main}>
-      <NavBar />
-      <About />
-      <Projects />
-      <Contact />
-    </main>
+      <main className={styles.main}>
+        <NavBar />
+        <About />
+        <Projects />
+        <Contact />
+      </main>
   );
 };

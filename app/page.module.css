@@ -27,7 +27,7 @@ display: flex;
   gap: 2rem;
   margin: 0;
   padding: 2rem;
-  z-index: 5;
+  z-index: 2;
 }
 
 .nav ul {
@@ -201,6 +201,21 @@ display: flex;
     gap: 1rem;
 }
 
+.proFilter {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 1rem;
+    
+}
+
+.proFilter button {
+  padding: 1rem;
+    color: white;
+}
+
 
 .proCard {
   cursor: pointer;
@@ -269,6 +284,14 @@ display: flex;
     overflow-y: auto;
 }
 
+.modalContent {
+  margin: 2rem 0;
+}
+
+.modalContent p{
+  margin: 1rem 0;
+}
+
 .modalBackdrop {
   position: absolute;
   top: 0;
@@ -283,9 +306,16 @@ display: flex;
   z-index: 9;
 }
 
-.galleryImage {
-  width: 400px;
-  height: auto;
+.galleryImageContainer {
+ position: relative;
+ overflow: hidden;
+ height: 400px;
+ width: 400px;
+ margin-top: 2rem;
+}
+
+.galleryImage{
+
 }
 
 .imgGallery {
@@ -348,7 +378,6 @@ display: flex;
 }
 
 
-
 @media (max-width: 500px){
   .aboutMe {
     padding: 2rem;
@@ -401,5 +430,39 @@ display: flex;
     padding: 0;
     width: inherit;
   }
+
+  .projectModal {
+      width: 95vw; /* Adjust width for smaller screens */
+      max-height: calc(100vh - 50px); /* Adjust max-height for smaller screens */
+      padding: 0; /* Adjust padding for smaller screens */
+  }
+
+  .modalWrapper {
+    width: 70%;
+    padding: 0;
+  }
+
+  .galleryImageContainer {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    width: 400px;
+    margin-top: 1rem;
+   }
+   
+   .galleryImage{
   
+   }
+
+   .imgGallery > * {
+    margin: 5px;
+    border-radius: 0;
+  }
+
+}
+
+@media (max-width: 850px) {
+  
+  
+
 }

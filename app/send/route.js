@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
     secure: process.env.NODEMAILER_SECURE || true, 
     auth: {
         user: process.env.NODEMAILER_USERNAME || "gracielduncan@gmail.com",
-        pass: process.env.NODEMAILER_PASSWORD || "password goes here"
+        pass: process.env.NODEMAILER_PASSWORD || "bdvq fcbo fuoz tcge"
     },
 });
 

@@ -8,6 +8,7 @@ const Modal = ({ children, render }) => {
     const openModal = () => {
         setIsOpen(true);
         document.body.style.overflow = "hidden";
+        document.nodeValue.style.visability = "hidden";
     };
     const closeModal = () => {
         setIsOpen(false);

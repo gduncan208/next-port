@@ -5,8 +5,6 @@ import Image from "next/image";
 import Modal from "./Modal";
 import FadeIn from "./FadeIn";
 import StaggerIn from "./StaggerIn";
-// import Carousel from "../components/Carousel";
-import { CCarousel, CCarouselItem, CImage } from '@coreui/react'
 import { Content } from "next/font/google";
 
 const ProjectCard = ({ imgUrl, title, description, tags, tools, gallery }) => {
@@ -47,26 +45,26 @@ const ProjectCard = ({ imgUrl, title, description, tags, tools, gallery }) => {
             }}>
                     <div className={styles.proInfo}>
                         <div className={styles.modalWrapper}>
+                            <div className={styles.modalContent}>
+                                <h3>{title}</h3>
+                                <ul className={styles.protags}>{projectTags}</ul>
 
-                            <h3>{title}</h3>
-                            <ul className={styles.protags}>{projectTags}</ul>
+                                <h4 style={{fontWeight: 600}}>Made With</h4>
+                                <ul className={styles.protools}>{projectTools}</ul>
 
-                            <h4 style={{fontWeight: 600}}>Made With</h4>
-                            <ul className={styles.protools}>{projectTools}</ul>
-
-                            <p>{description}</p>
+                                <p>{description}</p>
+                            </div>
                                 <div className={styles.imgGallery}>
                                     {gallery && gallery.length ? gallery.map((image, index) => {
                                         console.log(image);
                                         return (
-                                            // <div style={{width: 400, height: 400}}>
-                                            <img 
+                                        <div className={styles.galleryImageContainer}>
+                                            <Image 
                                             src={image.src} 
-                                            height={0}
-                                            width={0} 
-    
-                                            className={styles.galleryImage}/>
-                                            // </div>
+                                            fill={true}
+                                            className={styles.galleryImage}
+                                            />
+                                        </div>
                                         )
                                     }) : null}
                             </div>

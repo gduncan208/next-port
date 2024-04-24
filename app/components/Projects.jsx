@@ -1,11 +1,14 @@
+"use client";
 import React from "react";
-import styles from "../page.module.css"
+import { useState } from "react";
+import styles from "../page.module.css";
 import ProjectCard from "./ProjectCard";
+import ProjectTag from "../components/ProjectTag";
 import StaggerIn from "./StaggerIn";
 import hotshellLogo from "../images/hotshell_assets/hotshellLogo_Icon for Web.png";
-import hotshellcards from "../images/hotshell_assets/hotshell_businesscard_mockup.png";
-import hotshellletters from "../images/hotshell_assets/hotshell_letter_mockup.png";
-import hotshellphone from "../images/hotshell_assets/phonemockupedited.png";
+import hotshellcards from "../images/hotshell_assets/cardmockupedited.png";
+import hotshellletters from "../images/hotshell_assets/hotshellletterrender - Copy.png";
+import hotshellphone from "../images/hotshell_assets/phones400.png";
 import obsidianLogo from "../images/obsidian_assets/obsidian_logo_icon.png";
 import obsidianhover from "../images/obsidian_assets/obsidian_businesscard_mockups.png";
 import anomaliLogo from "../images/anomali_assets/GDES_221_SPRING2022_MYDIGITAL_BRAND_GRACIE_DUNCAN (1)-20.png"
@@ -18,7 +21,7 @@ const projectsData = [
         title: "Hotshell Cloud Service",
         description:"School Project: We started with 99 doodles and had to narrow it down to two, which we then had to combine in a logo. I had narrowed it down to a snail and a hot air balloon. The end result reminded me of a browser logo like Firefox. But because snails are associated with being slow, I decided that the logo was for a cloud service. Hot air balloons float amongst the clouds and snails use their shells as a safe space, so it fits nicely.",
         image: hotshellLogo,
-        tag: ["Graphic Design", "Logo Design"],
+        tag: ["Featured","Graphic Design", "Logo Design"],
         tool: ["Adobe Illustator", "Blender"],
         gallery: [hotshellcards, hotshellletters, hotshellphone],
     },
@@ -45,12 +48,32 @@ const projectsData = [
 
 
 const Projects = () => {
+    const [tag, setTag] = useState("Featured");
+
+    const handleTagChange = (newTag) => {
+        console.log("Now displaying", newTag, "projects");
+        setTag(newTag);
+    }
+
+    const filterProjects = projectsData.filter((project) => 
+        project.tag.includes(tag)
+    );
 
     return (
         <section className={styles.projectsSection} id="projects">
+            <h2>Projects</h2>
+            <div className={styles.proFilter}>
+                <ProjectTag onClick={handleTagChange} tag="Featured" isSelected={tag === "Featured"} />
+                <ProjectTag onClick={handleTagChange} tag="Graphic Design" isSelected={tag === "Graphic Design"} />
+                {/* <ProjectTag onClick={handleTagChange} tag="Web" isSelected={tag === "Web"} /> */}
+            </div>
+            <div className={styles.proFilter}>
+                <ProjectTag onClick={handleTagChange} tag="Poster" isSelected={tag === "Poster"} />
+                <ProjectTag onClick={handleTagChange} tag="Logo Design" isSelected={tag === "Logo Design"} />
+            </div>
             <FadeIn>
             <ul className={styles.projects}>
-                {projectsData.map((project) => 
+                {filterProjects.map((project) => 
                 <ProjectCard 
                     key={project.id} 
                     title={project.title} 
