@@ -13,12 +13,19 @@ const ContactForm = () => {
     const [submission, setSubmission] = useState(defaultSubmission);
 
 
-    const handleSubmit = async (formData) => {
-        let object = {};
-        formData.forEach((value, key) => object[key] = value);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formData = {};
+        const elements = e.currentTarget.elements;
+
+        Array.from(elements).forEach((field) => {
+            if (!field.name) return;
+            formData[field.name] = field.value;
+        });
+
         await fetch('/send', {
             method: 'POST',
-            body: JSON.stringify(object),
+            body: JSON.stringify(formData),
         })
             .then((res) => res.json())
             .then((res) => {
@@ -32,7 +39,7 @@ const ContactForm = () => {
             <form className={styles.form} onSubmit={handleSubmit}>
                 <TextField className={styles.textField} name="name" id="outlined-basic" label="Name" variant="filled" />
                 <TextField className={styles.textField} name="email" id="outlined-basic" label="Email" variant="filled" />
-                <TextareaAutosize className={styles.textField} id="message" label="Message" minRows={3} />
+                <TextareaAutosize className={styles.textField} id="message" name="message" label="Message" minRows={3} />
                 <Button className={styles.submitButton} variant="outlined" type="submit">Submit</Button>
             </form>
         </div>
