@@ -18,7 +18,7 @@ export async function POST(request) {
     const body = await request.json();
     const info = await transporter.sendMail({
         from: 'gracielduncan@gmail.com', // sender address
-        to: "gracielduncan@gmail.com", // list of receivers
+        to: "gduncan@nic.edu", // list of receivers
         subject: `Vercel Contact ${body.name}`, // Subject line
         text: body.message, // plain text body
         html: `<b>${body.message}</b>`, // html body
