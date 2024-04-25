@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
+.headings {
+  font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 72px;
+}
 
 .main {
 display: flex;
@@ -91,7 +98,7 @@ display: flex;
 
 .aboutSection, .projectsSection {
   color: white;
-  margin: 0 auto 4rem;
+  margin: 100px auto 4rem;
   min-width: 350px;
 }
 
@@ -192,6 +199,20 @@ display: flex;
   margin: .5rem;
 }
 
+.projectsSection {
+  width: 100%;
+  height: auto;
+  min-height: 95vh;
+}
+
+.projectsSection h2 {
+  height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .projects {
   display: flex;
     flex-direction: row;
@@ -211,6 +232,21 @@ display: flex;
     
 }
 
+.proFilterSub {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.proFilterSub button {
+ padding: .5rem;
+ margin: 0 .5rem;
+}
+
+
+
 .proFilter button {
   padding: 1rem;
     color: white;
@@ -226,6 +262,7 @@ display: flex;
     justify-content: center;
     align-items: center;
   transition: .5s ease;
+  position: relative;
 }
 
 
@@ -347,6 +384,11 @@ display: flex;
   visibility: visible;
 }
 
+.contactSection {
+  width: 100%;
+  height: 50vh;
+}
+
 .form {
   width: 70%;
   display: flex;
@@ -374,7 +416,7 @@ display: flex;
 }
 
 .contactSection {
-
+  
 }
 
 

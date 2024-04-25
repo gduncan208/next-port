@@ -61,29 +61,29 @@ const Projects = () => {
 
     return (
         <section className={styles.projectsSection} id="projects">
-            <h2>Projects</h2>
+            <h2 className={styles.headings}>Projects</h2>
             <div className={styles.proFilter}>
                 <ProjectTag onClick={handleTagChange} tag="Featured" isSelected={tag === "Featured"} />
                 <ProjectTag onClick={handleTagChange} tag="Graphic Design" isSelected={tag === "Graphic Design"} />
                 {/* <ProjectTag onClick={handleTagChange} tag="Web" isSelected={tag === "Web"} /> */}
             </div>
-            <div className={styles.proFilter}>
+            <div className={styles.proFilterSub}>
                 <ProjectTag onClick={handleTagChange} tag="Poster" isSelected={tag === "Poster"} />
                 <ProjectTag onClick={handleTagChange} tag="Logo Design" isSelected={tag === "Logo Design"} />
             </div>
             <FadeIn>
-            <ul className={styles.projects}>
-                {filterProjects.map((project) => 
-                <ProjectCard 
-                    key={project.id} 
-                    title={project.title} 
-                    description={project.description} 
-                    imgUrl={project.image} 
-                    tags={project.tag}
-                    tools={project.tool}
-                    gallery={project.gallery} /> 
-                    )}
-            </ul>
+                <ul className={styles.projects}>
+                    {filterProjects.map((project) => 
+                    <ProjectCard 
+                        key={project.id} 
+                        title={project.title} 
+                        description={project.description} 
+                        imgUrl={project.image} 
+                        tags={project.tag}
+                        tools={project.tool}
+                        gallery={project.gallery} /> 
+                        )}
+                </ul>
             </FadeIn>
         </section>
     )

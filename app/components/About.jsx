@@ -49,6 +49,7 @@ const About = () => {
     }
     return (
         <section className={styles.aboutSection} id="about">
+            <h2 className={styles.headings}>About</h2>
             <div className={styles.aboutGrid}>
                 <FadeIn>
                     <Grid container justifyContent={"center"} alignItems={"center"}>
