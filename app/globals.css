@@ -117,7 +117,7 @@ body::after {
   z-index: 1; /* Ensure pseudo-elements are below the content */
   opacity: 0.3; /* Adjust opacity as needed */
   /* Apply noise texture using SVG filter */
-  background: #7996A1 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" /></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" /></svg>') center/cover fixed;
+  background: #7996A1 url('data:image/svg+xml,<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="3.3" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>')
 }
 
 /* Ensure one pseudo-element is positioned behind the content and the other in front */
